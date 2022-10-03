@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pomodoro</title>
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+  <div class="container">
+    <div class="collapse">
+      <div class="sidebar">
+        <ul class="menu">
+          <li class="todo"><img src="./assets/imgs/icon-list.svg" alt="To-do List"></li>
+          <!-- <li class="statistics-analyze"><img src="./assets/imgs/icon-analysis.svg" alt="Statistics"></li> -->
+        </ul>
+      </div>
+      <div class="todo-list tool-block">
+        <div class="list-header">
+          <div class="list-title">代辦清單</div>
+          <div class="tab">
+            <button class="tab-type tab-type--all active">全部</button>
+            <button class="tab-type tab-type--undone">未完成</button>
+            <button class="tab-type tab-type--completed">已完成</button>
+          </div>
+        </div>
+        <div class="list-content">
+          <div class="add-new-item">
+            <input id="add-new-input" type="text" placeholder="新增代辦事項">
+            <button id="add-new-btn"><img src="./assets/imgs/icon-add.svg" alt="Add new item."></button>
+          </div>
+          <ul></ul>
+          <hr>
+        </div>
+      </div>
+      <div class="statistics-block tool-block">
+        <div class="statistics-title">專注度分析</div>
+        <div class="statistics-data">
+          <div class="today-data">
+            <div class="data-title">今日<span class="today-date">2019.07.13</span></div>
+            <div class="data-content">
+              <div class="todo-item-count">
+                <div class="count-num">9</div>
+                <div class="count-name">代辦事項</div>
+              </div>
+              <div class="vertical-hr"></div>
+              <div class="completed-item-count">
+                <div class="count-num">7</div>
+                <div class="count-name">已完成</div>
+              </div>
+            </div>
+          </div>
+          <div class="week-data">
+            <div class="data-title">本週</div>
+            <div class="data-content">
+              <div class="todo-item-count">
+                <div class="count-num">54</div>
+                <div class="count-name">代辦事項</div>
+              </div>
+              <div class="vertical-hr"></div>
+              <div class="completed-item-count">
+                <div class="count-num">48</div>
+                <div class="count-name">已完成</div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="this-week">
+          <canvas id="weekChart"></canvas>
+        </div>
+      </div>
+    </div>
+    <div class="main">
+      <div class="main-header">
+        <div class="current-date-time"></div>
+      </div>
+      <div class="main-content">
+        <div class="countdown-block">
+          <div class="main-countdown">
+            <div id="countdown">25:00</div>
+            <div class="countdown-tool">
+              <button class="bell"><img src="./assets/imgs/icon-bell.svg" alt=""></button>
+              <button class="play active"><img src="./assets/imgs/icon-play--orange.svg" alt=""></button>
+              <button class="pause"><img src="./assets/imgs/icon-pause--orange.svg" alt=""></button>
+              <button class="reset-play active"><img src="./assets/imgs/icon-cancel.svg" alt=""></button>
+            </div>
+          </div>
+          <div class="rest-block">
+            <div>休息，</div>
+            <span>是為了下一次的努力。</span>
+          </div>
+        </div>
+      </div>
+      <audio id="alarmAudio" style="display: none;">
+        <source src="./assets/sound/Alarm-ringtone.mp3" type="audio/mpeg">
+      </audio>
+    </div>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="./assets/js/main.js"></script>
+</body>
+</html>

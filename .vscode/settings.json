@@ -1,0 +1,20 @@
+{
+  "liveSassCompile.settings.formats": [
+
+    {
+      "format": "expanded",
+      "extensionName": ".css",
+      "savePath": "/assets/css",
+      "savePathReplacementPairs": null
+    },
+    {
+      "extensionName": ".min.css", // 正式版副檔名為min.css
+      "format": "compressed", // 壓縮成一行css，正式版本
+      "savePath": "/assets/css"
+    }
+  ],
+  "liveSassCompile.settings.autoprefix": [
+    "> 1%",
+    "last 2 versions"
+  ]
+}
