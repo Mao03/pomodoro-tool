@@ -119,9 +119,8 @@
     const pause = document.querySelector(".pause");
     const reset = document.querySelector(".reset-play");
     // normal: 25 min. | rest: 5 min.
+    console.log('setCountDown: ', countdownMode);
     const currentTime = countdownMode === 'normal' ? '25:00' : '05:00'
-    const totalSeconds = (countdownMode === 'normal' ? 25 : 5) * 60;
-    let countSeconds = totalSeconds;
     let timer = "";
     let isPaused = false;
     // 切換模式後，將畫面時間改成對應時間
@@ -133,11 +132,15 @@
     }
 
     function doPlay() {
+      // normal: 25 min. | rest: 5 min.
+      const totalSeconds = (countdownMode === 'normal' ? 25 : 5) * 60;
+      let countSeconds = totalSeconds;
       alarmAudio.pause();
       alarmAudio.currentTime = 0;
       play.classList.remove('active');
       pause.classList.add('active');
       isPaused = false;
+      console.log('countSeconds: ', countSeconds);
       if (timer) return;
       timer = setInterval(function () {
         if (isPaused) return;
@@ -171,6 +174,7 @@
               playImg.setAttribute('src', './assets/imgs/icon-play--orange.svg');
               pauseImg.setAttribute('src', './assets/imgs/icon-pause--orange.svg');
             }
+            console.log('countdownMode: ', countdownMode);
             play.classList.add('active');
             pause.classList.remove('active');
             countdown.classList.remove('timeout');
