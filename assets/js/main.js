@@ -324,7 +324,7 @@
       });
       if (innerText === '未完成') {
         const checkedInputs = document.querySelectorAll('input.todo-checkbox:checked');
-        if (checkedInputs.length === 0) return;
+        // if (checkedInputs.length === 0) return;
         checkedInputs.forEach((input) => {
           const { id } = input;
           const uuid = id.split('todo-')[1];
@@ -336,7 +336,7 @@
         listContentUL.classList.add('not-all');
       } else if (innerText === '已完成') {
         const notCheckedInputs = document.querySelectorAll('input.todo-checkbox:not(:checked)');
-        if (notCheckedInputs.length === 0) return;
+        // if (notCheckedInputs.length === 0) return;
         notCheckedInputs.forEach((input) => {
           const { id } = input;
           const uuid = id.split('todo-')[1];
